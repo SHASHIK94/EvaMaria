@@ -435,10 +435,11 @@ async def settings(client, message):
                 [
                     InlineKeyboardButton('Welcome 🐣', callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}'),
                     InlineKeyboardButton('Yes 🐥🌳' if settings["welcome"] else 'No 🐣🌳',
-                                         callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}')
-                ]
-            ]
-
+                                         callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}',
+                                      ),
+                                ],
+                           ]                          
+  
         reply_markup = InlineKeyboardMarkup(buttons)
 
         await message.reply_text(
